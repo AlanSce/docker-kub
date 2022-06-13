@@ -13,6 +13,7 @@ docker pull nicopaez/pingapp:3.0.0
 `
 docker image tag nicopaez/pingapp:3.0.0 alansce/pingapp:3.0.0
 `
+
 4- Realizar el login para poder pushear la imagen 
 
 `
