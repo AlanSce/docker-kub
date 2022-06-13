@@ -20,7 +20,7 @@ docker image tag nicopaez/pingapp:3.0.0 alansce/pingapp:3.0.0
 docker login -u alansce
 `
 
-5- 
+5- Pushear a nuestro repo
 
 `
 docker image push alansce/pingapp:3.0.0
