@@ -7,7 +7,7 @@ Se están ejecutando dos contenedores
 
 
 docker-compose-jobvacancy.yml:
-
+```
 version: '2'
 services:
   web: //declara contenedor web
@@ -26,7 +26,7 @@ services:
     image: postgres //indica la imagen a utilizar
     environment:
       POSTGRES_PASSWORD: Passw0rd! //le pasa al contenedor una variable de entorno
-
+```
 Los contenedores se ven entre sí a través del comando links. Entiendo que web puede ver a db, pero db no puede ver a web. No pude encontrar si esto es así, o si al declarar link en uno, los dos se pueden encontrar. 
 
 Entiendo que al declararse como en el ejemplo, el contenedor web puede encontrar a db para hacer una petición y que éste responda, pero db no podría hacerle una petición al contenedor web.
