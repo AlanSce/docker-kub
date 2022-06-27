@@ -1,4 +1,4 @@
-#Deploy
+# Deploy
 
 `
 minikube start
@@ -26,7 +26,7 @@ root@passwordapi-5dd5f46c96-4plr7:/usr/src/app# curl localhost:3000/password
 `
 
 
-##Mediante forward de puertos
+## Mediante forward de puertos
 
 `
 kubectl get pods //obtener nombre de los pods
