@@ -4,14 +4,24 @@ services:
     image: nicopaez/password-api
     ports:
     - "3001:3000"
+    expose:
+    - "3000"
+
   pswd2:
     image: nicopaez/password-api
     ports:
     - "3002:3000"
+    expose:
+    - "3000"
   nginx:
-    build: ./nginx
+    image: nginx
+    volumes: 
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
     - "8080:80"
     depends_on:
+    - pswd1
+    - pswd2
+    links:
     - pswd1
     - pswd2
