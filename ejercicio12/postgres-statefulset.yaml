@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: pgstateful
+
+spec:
+  serviceName: "postgres"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+
+  template:
+    metadata:
+      labels:
+        app: postgres
+
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:10.4
+        envFrom:
+        - configMapRef:
+            name: pgconfig
+        ports:
+        - containerPort: 5432
+          name: base
+        volumeMounts:
+        - name: base
+          mountPath: /var/lib/PostgreSQL/data
+          subPath: Postgres
+
+  volumeClaimTemplates:
+  - metadata:
+      name: base
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: standard 
+      resources:
+        requests:
+          storage: 3Gi
