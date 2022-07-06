@@ -1,3 +1,20 @@
+# Conexión 
+
+Una vez deployado todo, hago: 
+
+```
+(master) alan@alan-vb:~/repo/docker-kub$ kubectl get pods
+NAME                          READY   STATUS    RESTARTS   AGE
+jobvacancy-7b75b44c9f-bmdd6   1/1     Running   0          70s
+pgstateful-0                  1/1     Running   0          3m50s
+(master) alan@alan-vb:~/repo/docker-kub$ kubectl port-forward jobvacancy-7b75b44c9f-bmdd6 3000
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+Handling connection for 3000
+```
+E ingresando a `localhost:3000` puedo manipular la aplicación. 
+
+
 # Prueba de que los datos se guardan correctamente en la base
 
 ```
