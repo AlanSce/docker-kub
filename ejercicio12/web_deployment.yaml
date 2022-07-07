@@ -18,5 +18,10 @@ spec:
       - name: webapp
         image: nicopaez/jobvacancy-ruby:1.0.5
         envFrom:
+          - secretRef:
+              name: secret-postgres
           - configMapRef:
               name: jobvacancyconfig
+        env: 
+          - name: DATABASE_URL
+            value: postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@postgres-svc:5432/$(POSTGRES_DB)

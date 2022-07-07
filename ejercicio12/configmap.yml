@@ -5,4 +5,4 @@ metadata:
 data:
   RACK_ENV: "production"
   PORT: "3000"
-  DATABASE_URL: "postgresql://myuser:mypassword@10.105.218.142:5432/base"
+  DATABASE_URL: postgresql://$(POSTGRES_USER):$(POSTGRES_PASSWOR)D@postgres-svc:5432/$(POSTGRES_DB)
