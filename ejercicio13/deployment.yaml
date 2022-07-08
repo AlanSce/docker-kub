@@ -21,6 +21,15 @@ spec:
         - containerPort: 8080
         livenessProbe:
           httpGet:
-            host: localhost
             path: /actuator/health
             port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 3
