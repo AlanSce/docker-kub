@@ -14,14 +14,14 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: passwordapi
+                name: passwordapi-svc
                 port:
                   number: 3000
           - path: /pingapp
             pathType: Prefix
             backend:
               service:
-                name: pingapp
+                name: pingapp-svc
                 port:
                   number: 4567
 
